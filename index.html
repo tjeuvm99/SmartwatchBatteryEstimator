@@ -1,0 +1,155 @@
+<!doctype html> 
+
+<html lang="nl"> 
+
+<head> 
+
+  <meta charset="utf-8" /> 
+
+  <meta name="viewport" content="width=device-width,initial-scale=1" /> 
+
+  <title>Smartwatch Battery Estimator</title> 
+
+  <link rel="stylesheet" href="styles.css" /> 
+
+</head> 
+
+<body> 
+
+  <main class="container"> 
+
+    <header class="header"> 
+
+      <h1>Smartwatch Battery Estimator</h1> 
+
+      <p class="subtitle">Kies je horloge, stel je gebruik in, en krijg een schatting.</p> 
+
+    </header> 
+
+  
+
+    <section class="card"> 
+
+      <form id="batteryForm" class="form"> 
+
+        <div class="field"> 
+
+          <label for="watchType">Smartwatch type</label> 
+
+          <select id="watchType" required> 
+
+            <option value="basic">Basic (fitness tracker)</option> 
+
+            <option value="standard">Standard (smartwatch)</option> 
+
+            <option value="pro">Pro (high-end)</option> 
+
+          </select> 
+
+        </div> 
+
+  
+
+        <div class="grid"> 
+
+          <div class="field"> 
+
+            <label for="capacity">Batterij (mAh)</label> 
+
+            <input id="capacity" type="number" min="100" step="50" value="300" required /> 
+
+            <small class="hint">Tip: 250–600 mAh is gebruikelijk</small> 
+
+          </div> 
+
+  
+
+          <div class="field"> 
+
+            <label for="usageHours">Actief gebruik (uren per dag)</label> 
+
+            <input id="usageHours" type="number" min="0" max="24" step="0.5" value="4" required /> 
+
+            <small class="hint">Scherm aan / interactie</small> 
+
+          </div> 
+
+        </div> 
+
+  
+
+        <fieldset class="fieldset"> 
+
+          <legend>Extra verbruik</legend> 
+
+  
+
+          <label class="check"> 
+
+            <input id="gps" type="checkbox" /> 
+
+            GPS (workouts / navigatie) 
+
+          </label> 
+
+  
+
+          <label class="check"> 
+
+            <input id="aod" type="checkbox" /> 
+
+            Always-on display 
+
+          </label> 
+
+  
+
+          <label class="check"> 
+
+            <input id="notifications" type="checkbox" checked /> 
+
+            Veel notificaties 
+
+          </label> 
+
+        </fieldset> 
+
+  
+
+        <button class="btn" type="submit">Bereken batterijduur</button> 
+
+      </form> 
+
+    </section> 
+
+  
+
+    <section class="card result" aria-live="polite"> 
+
+      <h2>Resultaat</h2> 
+
+      <p id="resultText" class="resultText">Vul je gegevens in en klik op “Bereken”.</p> 
+
+      <p id="tipText" class="tipText"></p> 
+
+    </section> 
+
+  
+
+    <footer class="footer"> 
+
+      <p>Demo voor GitHub training • HTML/CSS/JS • Geen echte medische/technische garantie 😉</p> 
+
+    </footer> 
+
+  </main> 
+
+  
+
+  <script src="app.js"></script> 
+
+</body> 
+
+</html> 
+
+ 
